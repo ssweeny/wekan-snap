@@ -51,8 +51,9 @@ apps:
 
 parts:
     mongodb:
-        source: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1604-3.2.10.tgz
         plugin: dump
+        prepare: ./bin/preparemongo.sh
+        build-packages: [wget]
         stage-packages: [libssl1.0.0]
         filesets:
             mongo:
